@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="JWT\**" />
+    <EmbeddedResource Remove="JWT\**" />
+    <None Remove="JWT\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Keycloak.ClaimsTransformation.Test" />
+  </ItemGroup>
+
+</Project>

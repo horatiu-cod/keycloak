@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\**" />
+    <Compile Remove="JWT\**" />
+    <Compile Remove="OIDC\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <EmbeddedResource Remove="JWT\**" />
+    <EmbeddedResource Remove="OIDC\**" />
+    <None Remove="Extensions\**" />
+    <None Remove="JWT\**" />
+    <None Remove="OIDC\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\Constants.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Test" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Keycloak.ClaimsTransformation\Keycloak.ClaimsTransformation.csproj" />
+  </ItemGroup>
+
+
+</Project>

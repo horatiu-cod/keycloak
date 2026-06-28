@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.Authentication", "src\Keycloak.Authentication\Keycloak.Authentication.csproj", "{38105748-6A71-44E2-8F63-F1FD92935F87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.Authorization", "src\Keycloak.Authorization\Keycloak.Authorization.csproj", "{536D58A7-CA14-4BE9-B540-5174F0661204}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerApp", "samples\BlazorServerApp\BlazorServerApp.csproj", "{613BB5FF-E360-4FA7-9AE8-30B8A92BF63F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "samples\WebApi\WebApi.csproj", "{80ABAA50-B2D7-40A5-A1F1-096A5F5969C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Test", "test\WebApi.Test\WebApi.Test.csproj", "{EC2E2454-FA1E-4173-90CA-A7FD226C2BA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.Authentication.Test", "test\Keycloak.Authentication.Test\Keycloak.Authentication.Test.csproj", "{57AFCE6B-A466-4C41-BEB3-4F4A999E3F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.ClaimsTransformation", "src\Keycloak.ClaimsTransformation\Keycloak.ClaimsTransformation.csproj", "{2A582855-A3E2-4435-B946-C2C4E5812E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.ClaimsTransformation.Test", "test\Keycloak.ClaimsTransformation.Test\Keycloak.ClaimsTransformation.Test.csproj", "{751E4B18-E427-4A79-91FB-C573357EEB4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38105748-6A71-44E2-8F63-F1FD92935F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38105748-6A71-44E2-8F63-F1FD92935F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38105748-6A71-44E2-8F63-F1FD92935F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38105748-6A71-44E2-8F63-F1FD92935F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536D58A7-CA14-4BE9-B540-5174F0661204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536D58A7-CA14-4BE9-B540-5174F0661204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536D58A7-CA14-4BE9-B540-5174F0661204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536D58A7-CA14-4BE9-B540-5174F0661204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613BB5FF-E360-4FA7-9AE8-30B8A92BF63F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613BB5FF-E360-4FA7-9AE8-30B8A92BF63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613BB5FF-E360-4FA7-9AE8-30B8A92BF63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613BB5FF-E360-4FA7-9AE8-30B8A92BF63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80ABAA50-B2D7-40A5-A1F1-096A5F5969C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80ABAA50-B2D7-40A5-A1F1-096A5F5969C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80ABAA50-B2D7-40A5-A1F1-096A5F5969C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80ABAA50-B2D7-40A5-A1F1-096A5F5969C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2E2454-FA1E-4173-90CA-A7FD226C2BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2E2454-FA1E-4173-90CA-A7FD226C2BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2E2454-FA1E-4173-90CA-A7FD226C2BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2E2454-FA1E-4173-90CA-A7FD226C2BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57AFCE6B-A466-4C41-BEB3-4F4A999E3F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57AFCE6B-A466-4C41-BEB3-4F4A999E3F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57AFCE6B-A466-4C41-BEB3-4F4A999E3F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57AFCE6B-A466-4C41-BEB3-4F4A999E3F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A582855-A3E2-4435-B946-C2C4E5812E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A582855-A3E2-4435-B946-C2C4E5812E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A582855-A3E2-4435-B946-C2C4E5812E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A582855-A3E2-4435-B946-C2C4E5812E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{751E4B18-E427-4A79-91FB-C573357EEB4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751E4B18-E427-4A79-91FB-C573357EEB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751E4B18-E427-4A79-91FB-C573357EEB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751E4B18-E427-4A79-91FB-C573357EEB4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B4D5B8B-1286-4E21-8CB3-DE86BA952D6E}
+	EndGlobalSection
+EndGlobal

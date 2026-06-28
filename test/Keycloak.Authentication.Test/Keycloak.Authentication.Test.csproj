@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>kat.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Unit\**" />
+    <EmbeddedResource Remove="Unit\**" />
+    <None Remove="Unit\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="6.12.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.11" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="Testcontainers.Keycloak" Version="4.0.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\samples\WebApi\WebApi.csproj" />
+    <ProjectReference Include="..\..\src\Keycloak.Authentication\Keycloak.Authentication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Integration\Resources\Certs\cert.pem">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Integration\Resources\Certs\key.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Integration\Resources\Import\oidc.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

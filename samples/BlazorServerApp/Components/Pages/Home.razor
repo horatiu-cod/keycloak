@@ -1,0 +1,89 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Authorization
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims;
+@using System.Security.Principal;
+@using System.Security.Cryptography
+@using System.Text
+@using System.IdentityModel.Tokens.Jwt
+@using Microsoft.AspNetCore.Authentication;
+@using System.Net.Http.Headers;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<p>@authMessage</p>
+<AuthorizeView Roles="admin-role">
+    <Authorized>
+        <div>
+            <span>Welcome @context.User.Identity?.Name!</span>
+            <form method="post" action="authentication/logout" style="display:inline;">
+                <AntiforgeryToken />
+                <button type="submit" class="btn btn-link">Logout</button>
+            </form>
+        </div>
+
+        <div>
+            @if (claims.Any())
+            {
+                <ul>
+                    @foreach (var claim in claims)
+                    {
+                        <li>@claim.Type: @claim.Value</li>
+                    }
+                </ul>
+            }
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <form method="get" action="authentication/login" style="display:inline;">
+            <AntiforgeryToken />
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <div>
+            @if (claims.Any())
+            {
+                <ul>
+                    @foreach (var claim in claims)
+                    {
+                        <li>@claim.Type: @claim.Value</li>
+                    }
+                </ul>
+            }
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+@code {
+    private string? authMessage;
+    private string? surname;
+    [CascadingParameter]
+    HttpContext? httpContext { get; set; }
+    private IEnumerable<Claim> claims = Enumerable.Empty<Claim>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetClaimsPrincipalData();
+        if (httpContext is not null)
+        {
+            var refreshToken = await httpContext.GetTokenAsync("refresh_token");
+            var accessToken = await httpContext.GetTokenAsync("access_token");
+            var Tokens = await httpContext.GetTokenAsync("id_token");
+        }
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider
+            .GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            authMessage = $"{user.Identity.Name} is authenticated.";
+            claims = user.Claims;
+        }
+        else
+        {
+            authMessage = "The user is NOT authenticated.";
+        }
+    }
+}

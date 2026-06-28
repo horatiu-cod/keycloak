@@ -1,0 +1,22 @@
+@WebApi_HostAddress = https://localhost:7213
+@public_client = frontend
+@realm = oidc
+@user = h@g.com
+@user_pass = s3cr3t
+
+### Login user public client
+# @name token_request
+POST https://localhost:8443/realms/oidc/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id={{public_client}}&username={{user}}&password={{user_pass}}
+
+#### response
+@access_token = {{token_request.response.body.access_token}}
+@refresh_token = {{token_request.response.body.refresh_token}}
+
+
+GET {{WebApi_HostAddress}}/api/authenticate
+Accept: application/json
+Authorization: Bearer {{access_token}}
+###
